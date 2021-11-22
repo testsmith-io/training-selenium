@@ -20,7 +20,7 @@ public class Exercise1 extends TestBase {
         final String rand = Integer.toString(new Random().nextInt());
 
         getDriver().get("http://demo.seleniuminaction.com/index.php");
-        getDriver().manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
+        getDriver().manage().timeouts().implicitlyWait(Duration.ofSeconds(15));
 
         getDriver().findElement(By.cssSelector("a.login")).click();
 

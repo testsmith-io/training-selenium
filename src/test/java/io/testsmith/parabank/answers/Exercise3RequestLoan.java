@@ -22,14 +22,14 @@ public class Exercise3RequestLoan extends TestBase {
 
         getDriver().findElement(By.linkText("Request Loan")).click();
 
-        getDriver().findElement(By.id("amount")).sendKeys("10000");
+        getDriver().findElement(By.id("amount")).sendKeys("1000000");
         getDriver().findElement(By.id("downPayment")).sendKeys("100");
         Select dropdownFromAccountId = new Select(getDriver().findElement(By.id("fromAccountId")));
         dropdownFromAccountId.selectByIndex(1);
 
         getDriver().findElement(By.xpath("//input[@value='Apply Now']")).click();
 
-        new WebDriverWait(getDriver(), 10).until(ExpectedConditions.
+        new WebDriverWait(getDriver(), Duration.ofSeconds(10)).until(ExpectedConditions.
                 textToBePresentInElement(
                         getDriver().findElement(By.id("loanStatus")), "Denied"));
 

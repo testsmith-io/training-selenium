@@ -21,7 +21,6 @@ import org.testng.annotations.Parameters;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.time.Duration;
-import java.util.concurrent.TimeUnit;
 
 public abstract class TestBase {
 
@@ -80,7 +79,7 @@ public abstract class TestBase {
             }
             driver.set(new RemoteWebDriver(new URL(DOCKER_SELENIUM_HUB_URL), dc));
         }
-        getDriver().manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+        getDriver().manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
         getDriver().manage().window().maximize();
     }
 

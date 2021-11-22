@@ -60,3 +60,7 @@ By default, Chrome will be used. To override the default browser, you can use th
 `mvn allure:report`
 
 `mvn allure:serve`
+
+## Display dependency updates
+
+`mvn versions:display-dependency-updates`

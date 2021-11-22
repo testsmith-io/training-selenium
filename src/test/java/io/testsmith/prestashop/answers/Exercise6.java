@@ -7,6 +7,8 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.Test;
 
+import java.time.Duration;
+
 /**
  * Test a slow form
  **/
@@ -25,7 +27,7 @@ public class Exercise6 extends TestBase {
 
         getDriver().findElement(By.cssSelector("button")).click();
 
-        WebDriverWait wait = new WebDriverWait(getDriver(), 40);
+        WebDriverWait wait = new WebDriverWait(getDriver(), Duration.ofSeconds(40));
         wait.until(ExpectedConditions.visibilityOf(getDriver().findElement(By.cssSelector(".alert-success"))));
 
         Assertions.assertThat(getDriver().findElement(By.cssSelector(".alert-success")).isDisplayed()).isTrue();

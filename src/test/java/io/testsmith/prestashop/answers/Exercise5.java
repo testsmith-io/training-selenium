@@ -30,7 +30,7 @@ public class Exercise5 extends TestBase {
     @Test(dataProvider = "data")
     public void searchSuccess(String query, String expectedResult) {
         getDriver().get("http://demo.seleniuminaction.com/index.php");
-        getDriver().manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
+        getDriver().manage().timeouts().implicitlyWait(Duration.ofSeconds(15));
 
         getDriver().findElement(By.name("search_query")).sendKeys(query);
         getDriver().findElement(By.name("submit_search")).click();
